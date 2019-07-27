@@ -9,3 +9,4 @@ git clone https://github.com/ducksfrogs/udemy_python.git
 git clone https://github.com/ducksfrogs/datacampR.git
 git clone https://github.com/ducksfrogs/masanariR.git
 git clone https://github.com/ducksfrogs/pycode.git
+git clone git@github.com:ducksfrogs/pybooks.git
