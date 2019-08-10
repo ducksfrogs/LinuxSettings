@@ -4,4 +4,4 @@
 sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt install adobe-flashplugin browser-plugin-freshplayer-pepperflash
+sudo apt install adobe-flashplugin browser-plugin-freshplayer-pepperflash -y
