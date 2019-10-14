@@ -5,7 +5,10 @@
 	],
 	"installed_packages":
 	[
+		"All Autocomplete",
+		"Emmet",
 		"Package Control",
+		"Python 3",
 		"Vintageous"
 	]
 }
