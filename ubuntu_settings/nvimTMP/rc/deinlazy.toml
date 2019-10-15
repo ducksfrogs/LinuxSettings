@@ -1,0 +1,158 @@
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = ['neosnippet-snippets', 'context_filetype.vim']
+on_event = 'InsertCharPre'
+on_ft = 'snippet'
+hook_source = '''
+
+  let g:neosnippet#enable_snipmate_compatibility = 1
+  let g:neosnippet#enable_completed_snippet = 1
+  let g:neosnippet#expand_word_boundary = 1
+
+  " let g:snippets_dir = '~/.config/nvim/snippets/,~/.config/nvim/bundle/snipmate/snippets/'
+  let g:neosnippet#snippets_directory = '~/.config/nvim/snippets'
+'''
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+hook_source = 'source ~/.config/nvim/rc/plugins/unite.rc.vim'
+hook_add = '''
+nnoremap <silent> <leader>g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> <leader>cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+nnoremap <silent> <leader>r  :<C-u>UniteResume search-buffer<CR>
+'''
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
+hook_source = 'source ~/.config/nvim/rc/plugins/denite.rc.vim'
+hook_add = '''
+nnoremap <silent> <c-p> :Denite file_rec<CR> 
+nnoremap <silent> <leader>c :Denite colorscheme<CR>
+nnoremap <silent> <leader>b :Denite buffer<CR>
+nnoremap <silent> <leader>a :Denite grep:::!<CR>
+nnoremap <silent> <leader>u :call dein#update()<CR>
+'''
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'Shougo/vimshell.vim'
+on_map = {n = '<Plug>'}
+hook_source = 'source ~/.config/nvim/rc/plugins/vimshell.rc.vim'
+hook_add = '''
+
+nnoremap <silent> <leader>is :VimShell<CR> 
+'''
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+on_cmd = 'Deol'
+on_source = 'denite.nvim'
+hook_add = '''
+  nnoremap <silent> N :<C-u>call deol#new({'command': 'zsh'})<CR>
+  nnoremap <silent> [Space]s :<C-u>Deol zsh<CR>
+  nnoremap <silent> [Window]D  :<C-u>call deol#kill_editor()<CR>
+'''
+hook_source = '''
+  let g:deol#prompt_pattern = '\w*%'
+  set shell=zsh
+
+  " Set to $PATH.
+  let s:bin = dein#get('vim-themis').rtp . '/bin'
+
+  function! s:split_envpath(path) abort "{{{
+    let delimiter = has('win32') ? ';' : ':'
+    if stridx(a:path, '\' . delimiter) < 0
+      return split(a:path, delimiter)
+    endif
+    let split = split(a:path, '\\\@<!\%(\\\\\)*\zs' . delimiter)
+    return map(split,'substitute(v:val, ''\\\([\\'
+          \ . delimiter . ']\)'', "\\1", "g")')
+  endfunction"}}}
+
+  function! s:join_envpath(list, orig_path, add_path) abort "{{{
+    let delimiter = has('win32') ? ';' : ':'
+    return (stridx(a:orig_path, '\' . delimiter) < 0
+          \ && stridx(a:add_path, delimiter) < 0) ?
+          \   join(a:list, delimiter) :
+          \   join(map(copy(a:list),
+          \        "substitute(v:path, ',\\|\\\\,\\@=', '\\\\\\0', 'g')"),
+          \        delimiter)
+  endfunction"}}}
+
+  let $PATH = s:join_envpath(
+        \ dein#util#_uniq(insert(
+        \    s:split_envpath($PATH), s:bin)), $PATH, s:bin)
+  let $THEMIS_HOME = dein#get('vim-themis').rtp
+
+  unlet s:bin
+
+  autocmd FileType deol call s:on_deol()
+  function! s:on_deol() abort
+    nnoremap <buffer><silent> [Space]gc :<C-u>call deol#send('git commit')<CR>
+    nnoremap <buffer><silent> [Space]gA :<C-u>call deol#send('git commit --amend')<CR>
+  endfunction
+'''
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+on_ft = 'vim'
+
+[[plugins]]
+repo = 'Shougo/neoinclude.vim'
+on_if = 1
+
+[[plugins]]
+repo = 'vim-jp/vital.vim'
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
+repo = 'thinca/vim-fontzoom'
+on_map = {n = '<Plug>'}
+hook_add = '''
+  nmap + <Plug>(fontzoom-larger)
+  nmap _ <Plug>(fontzoom-smaller)
+'''
+
+[[plugins]]
+repo = 'thinca/vim-scouter'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+[[plugins]]
+repo = 'aharisu/vim-gdev'
+on_ft = 'scheme'
+
+[[plugins]]
+repo = 'rhysd/vim-operator-surround'
+depends = 'vim-operator-user'
+on_map = {n = '<Plug>'}
+hook_add = '''
+  nmap <silent>sa <Plug>(operator-surround-append)a
+  nmap <silent>sd <Plug>(operator-surround-delete)a
+  nmap <silent>sr <Plug>(operator-surround-replace)a
+  nmap <silent>sc <Plug>(operator-surround-replace)a
+'''
+
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+if = "!has('nvim')"
+on_ft = 'python'
+hook_source = '''
+  let g:jedi#completions_enabled = 0
+  let g:jedi#auto_vim_configuration = 0
+  let g:jedi#smart_auto_mappings = 0
+  let g:jedi#show_call_signatures = 0
+'''
+
+[[plugins]]
+repo = 'tweekmonster/impsort.vim'
+on_cmd = 'ImpSort'
+hook_source = 'let g:impsort_highlight_imported = 0'
+
