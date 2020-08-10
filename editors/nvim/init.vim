@@ -1,10 +1,8 @@
-set mouse=
 filetype on
 set  number
 set numberwidth =1
 set tabstop=2 shiftwidth=2 expandtab
 set conceallevel=0
-set virtualedit=
 set wildmenu
 set laststatus=2
 set wrap linebreak nolist
@@ -24,7 +22,6 @@ autocmd BufReadPost *
 " center buffer around cursor when opening files
 autocmd BufRead * normal zz
 " set updatetime=500
-set complete=.,w,b,u,t,k
 autocmd InsertEnter * let save_cwd = getcwd() | set autochdir
 autocmd InsertLeave * set noautochdir | execute 'cd' fnameescape(save_cwd)
 set formatoptions+=t

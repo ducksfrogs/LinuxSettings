@@ -25,14 +25,14 @@ call deoplete#custom#source('_', 'converters', [
 call deoplete#custom#source('clang', 'input_pattern', '\.\w*|\.->\w*|\w+::\w*')
 call deoplete#custom#source('clang', 'max_pattern_length', -1)
 
-let g:deoplete#keyword_patterns = {}
-let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\k*\(?'
-" let g:deoplete#keyword_patterns.tex = '\\?[a-zA-Z_]\w*'
-let g:deoplete#keyword_patterns.tex = '[^\w|\s][a-zA-Z_]\w*'
+"let g:deoplete#keyword_patterns = {}
+"let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\k*\(?'
+ let g:deoplete#custom#option()
 
-let g:deoplete#omni#input_patterns = {}
-let g:deoplete#omni#input_patterns.python = ''
-let g:deoplete#omni#functions = {}
+
+"let g:deoplete#omni#input_patterns = {}
+"let g:deoplete#omni#input_patterns.python = ''
+let g:deoplete#custom#Var()
 
 " inoremap <silent><expr> <C-t> deoplete#manual_complete('file')
 
