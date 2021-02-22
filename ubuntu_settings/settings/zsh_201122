@@ -14,7 +14,7 @@ fi
 #alias
 alias cp='nocorrect cp'
 alias mkdir='nocorrect mkdir'
-alias xm='xmodmap .xmodmap'
+alias xm='xmodmap ~/.xmodmap'
 alias j=jobs
 alias h=history
 alias grep=egrep
