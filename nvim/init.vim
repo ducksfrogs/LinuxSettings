@@ -6,3 +6,9 @@ set expandtab
 set splitright
 set clipboard=unnamed
 set hls
+
+if &compatible
+  set nocompatible
+endif
+
+
