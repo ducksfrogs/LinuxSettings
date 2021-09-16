@@ -12,7 +12,7 @@ if &compatible
 endif
 
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-if deinload_steate('~/.cache/dein')
+if dein#load_stete('~/.cache/dein')
   call dein#begin('~/.cache/dein')
   call dein#end()
   call dein#save_state()
