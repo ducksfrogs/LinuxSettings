@@ -7,6 +7,8 @@ repo = 'tpope/vim-endwise'
 [[plugins]]
 repo = 'Townk/vim-autoclose'
 
+[[plugins]]
+repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'w0rp/ale'
@@ -46,10 +48,12 @@ hook_add = '''
   call denite#custom#var('file_rec', 'command', ['pt', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', ''])
 '''
 
+
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 depends = ['vim-airline/vim-airline-themes']
 hook_source = '''
+
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
