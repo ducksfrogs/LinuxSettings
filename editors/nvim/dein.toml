@@ -11,6 +11,10 @@ repo = 'Townk/vim-autoclose'
 repo = 'tpope/vim-surround'
 
 [[plugins]]
+repo = 'tpope/vim-repeat'
+on_idle = 1
+
+[[plugins]]
 repo = 'w0rp/ale'
 
 [[plugins]]
