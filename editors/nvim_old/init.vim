@@ -16,7 +16,7 @@ set undofile
 set undodir="$HOME/.VIM_UNDO_FILES"
 " Remember cursor position between vim sessions
 autocmd BufReadPost *
-      \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+      \ if line("'\"") > 0 && line ("}}}'\"") <= line("$") |
       \   exe "normal! g'\"" |
       \ endif
 " center buffer around cursor when opening files
