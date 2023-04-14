@@ -1,0 +1,1 @@
+/home/ma/.config/nvim/repos/github.com/mattn/vim-maketable/plugin/maketable.vim

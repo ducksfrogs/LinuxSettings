@@ -1,0 +1,1 @@
+/home/ma/.config/nvim/repos/github.com/junegunn/fzf/src/result_x86.go
