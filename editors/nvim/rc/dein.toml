@@ -42,6 +42,9 @@ build_on = '''
 '''
 
 [[plugins]]
+repo = 'tpope/vim-sorround'
+
+[[plugins]]
 repo = 'junegunn/fzf.vim'
 
 [[plugins]]
