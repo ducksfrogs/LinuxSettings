@@ -1,1 +1,0 @@
-/home/ma/.config/nvim/repos/github.com/junegunn/fzf/src/algo/algo_test.go
