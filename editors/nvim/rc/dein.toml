@@ -42,10 +42,15 @@ build_on = '''
 '''
 
 [[plugins]]
-repo = 'tpope/vim-sorround'
-
-[[plugins]]
 repo = 'junegunn/fzf.vim'
+hook_add = '''
+set rtp+=~/.fzf
+'''
 
 [[plugins]]
 repo = 'mattn/vim-maketable'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+
