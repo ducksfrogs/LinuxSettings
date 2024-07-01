@@ -7,9 +7,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone https://github.com/jeffreytse/zsh-vi-mode \
   $ZSH_CUSTOM/plugins/zsh-vi-mode
 
-git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
+
+cp zshrc ~/.zshrc
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
+cd ~/
 
-cp zshrc ~/.zshrc
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
+
+source ~/.zshrc
