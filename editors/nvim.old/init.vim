@@ -1,4 +1,5 @@
 set number
+set cursorline
 
 if (!isdirectory(expand("$HOME/.cache/nvim/repos/github.com/Shougo/dein.vim")))
   call system(expand("mkdir -p $HOME/.cache/nvim/repos/github.com"))
