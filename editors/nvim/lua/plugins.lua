@@ -1,20 +1,15 @@
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-vim.cmd [[packadd packer.nvim ]]
+require("lazy").setup()
 
-return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
-    use 'nvim-treesitter/nvim-treesitter'
-    use {
-	'neoclide/coc.nvim', branch = 'release'
-	}
-
-    use 'rstacruz/vim-closer'
-
-    use {
-    "williamboman/mason.nvim"
-    }
-
-    use {
-        'ayu-theme/ayu-vim'
-    }
-end)
