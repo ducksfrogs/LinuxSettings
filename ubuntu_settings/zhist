@@ -1,0 +1,19 @@
+cd vm/debian
+vagrant init
+nvim Vagrantfile
+vagrant up
+vagrant up --provider=virtualbox
+VBoxManage --version
+sudo /sbin/vboxconfig
+sudo dnf update
+$ sudo apt install -y linux-headers-amd64 linux-headers-5.6.0-0.bpo.2-amd64\
+
+sudo apt install -y linux-headers-amd64 linux-headers-5.6.0-0.bpo.2-amd64\
+
+sudo add-apt-repository ppa:ubuntu-toolchain-r/ppa -y
+sudo apt update
+sudo apt install g++-12 gcc-12 
+vagrant up
+sudo /sbin/vboxconfig
+vagrant up
+cp ~/.zsh_history zhist
