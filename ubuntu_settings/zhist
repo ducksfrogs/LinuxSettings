@@ -1,8 +1,14 @@
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf .config/nvim/.git
+mkdir -p ~/.local/share/fonts\
+re/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
+curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
+tar xvf JetBrainsMono.tar.xz
+less README.md
+mkdir samples
+cd samples
+echo "# sanples_sass" >> README.md\
 
-sudo add-apt-repository ppa:ubuntu-toolchain-r/ppa -y
-sudo apt update
-sudo apt install g++-12 gcc-12 
-vagrant up
-sudo /sbin/vboxconfig
-vagrant up
-cp ~/.zsh_history zhist
+md\
+first commit"\
+ain\
